@@ -2,7 +2,12 @@
   <div class="card">
     <div class="card-body">
       <h3 class="card-title">Parent Component (AppComponent)</h3>
-      <input type="text" class="form-control w-75" [(ngModel)]="pText" />
+      <input
+        type="text"
+        class="form-control w-75"
+        #parentMessage
+        (keyup)="onKey(parentMessage.value)"
+      />
 
       <p>
         This is the message from the Child:

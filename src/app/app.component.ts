@@ -12,4 +12,8 @@ export class AppComponent {
   recieveMessage(msg: string) {
     this.childMessage = msg;
   }
+
+  onKey(str: string): void {
+    this.pText = str;
+  }
 }
