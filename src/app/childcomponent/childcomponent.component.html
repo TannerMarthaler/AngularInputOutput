@@ -4,10 +4,13 @@
     <div class="card-body">
       <p>This is the message from the Parent: {{ inputText }}</p>
       <div>
-        <input type="text" class="form-control w-75" />
+        <input type="text" class="form-control w-75" [(ngModel)]="cText" />
       </div>
       <div>
-        <button class="btn btn-primary">Send Message!</button>
+        <button class="btn btn-primary" (click)="sendMessage()">
+          Send Message!
+        </button>
+        <button class="btn btn-primary" (click)="clear()">Clear</button>
       </div>
     </div>
   </div>

@@ -1,15 +1,21 @@
 <div class="container">
-  <div class="card" >
+  <div class="card">
     <div class="card-body">
       <h3 class="card-title">Parent Component (AppComponent)</h3>
-      <input type="text" class="form-control w-75" />
+      <input type="text" class="form-control w-75" [(ngModel)]="pText" />
 
-      <p>This is the message from the Child: <em></em></p>
+      <p>
+        This is the message from the Child:
+        <em>{{ childMessage | uppercase }}</em>
+      </p>
 
       <div class="container">
         <div class="row">
           <div class="col">
-            <app-childcomponent></app-childcomponent>
+            <app-childcomponent
+              [inputText]="pText"
+              (outputEvent)="recieveMessage($event)"
+            ></app-childcomponent>
           </div>
         </div>
       </div>
